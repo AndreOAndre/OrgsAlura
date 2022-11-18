@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <!--fillViewport = "true" -> utilize o atributo android:fillViewport com o valor true,
+                                 para que o ScrollView preencha toda a tela de exibição.
+    -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.activity.FormularioProdutoActivity">
+
+
+        <EditText
+            android:id="@+id/name_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Product name"
+            android:inputType="textCapSentences"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/description_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Product description"
+            android:inputType="textCapSentences"
+            app:layout_constraintEnd_toEndOf="@id/name_form"
+            app:layout_constraintStart_toStartOf="@id/name_form"
+            app:layout_constraintTop_toBottomOf="@id/name_form" />
+
+        <EditText
+            android:id="@+id/value_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Product Value"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@id/name_form"
+            app:layout_constraintStart_toStartOf="@id/name_form"
+            app:layout_constraintTop_toBottomOf="@id/description_form" />
+        <!-- //EditText -> cria uma view onde você pode editar o texto.
+
+     //android:hint = "" -> hint cria uma legenda para a view,
+                                     para o usuario entender o que deve colocar.
+-->
+
+
+        <Button
+            android:id="@+id/button_save_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/value_form"
+            app:layout_constraintVertical_bias="1" />
+        <!-- //Button -> por encrivel que pareça, ele cria um botão.
+
+     //text -> cria a descrção da view;
+                OBS: caso seja uma EdtitText se colocar
+                o text ele irá pré definido como um texto editavel.
+                o recomendado é usar um hint neste caso.
+
+     //layout_constraintVertical_bias -> faz com que o item fique sempre abaixo
+                                         do último campo da viewGroup.
+-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
